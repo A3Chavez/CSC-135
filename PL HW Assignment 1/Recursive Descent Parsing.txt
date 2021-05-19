@@ -1,0 +1,49 @@
+procedure exp() { 
+	term();
+	if (token == ‘+’) { 
+		match(‘+’);
+		term();
+	}
+	else if (token ==‘-’) { 
+		match(‘-’);
+		term();
+	}
+	else break;
+}
+
+procedure term() { 
+	factor();
+	if (token == ‘*’) { 
+		match(‘*’);
+		factor();
+	}
+	else if (token == ‘/’) {
+		match (‘/’);
+		factor();
+	}
+	else break;
+}
+
+procedure factor() {
+	if (token == ‘(‘) {
+		match (‘(‘);
+		exp();
+		match (‘)’);
+	}
+	else digit();
+}
+
+procedure digit() {
+	if (token in [0,1,2,3]) {
+		match(token);
+		match ($);
+	}
+	else error;
+}
+
+match(t) {
+	if (token==t) {
+		advanceTokenPtr;
+	}
+	else error;
+}

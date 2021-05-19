@@ -1,0 +1,122 @@
+<input type="text" id="input" >
+<button onclick="submit()"> Submit </button> </br></br> 
+<p>
+<script>
+
+var inputString;
+var index1;
+var errorflag;
+
+function submit()
+{
+    index1=0;
+    errorflag=0;
+    inputString = document.getElementById("input").value;
+    if(inputString[inputString.length-1]==="$")
+        Start_scan();
+    else
+        confirm("Not a valid string! $ sign is missing. ");
+}
+
+function Start_scan()
+{
+    Expr();
+    validate_token('$');
+    if (errorflag === 0){
+        confirm("Valid String! :)" + "\n");
+    }
+}
+
+function Expr()
+{
+    Term();
+    while((Token()==='+') || (Token()==='-'))
+    {
+        if(Token()==='+')
+        {
+            validate_token(Token());
+            Term();
+        }
+        else if(Token()==='-')
+        {
+            validate_token(Token());
+            Term();
+        }
+        else
+        {
+            Error();
+        }
+    }
+}
+
+function Term()
+{
+    Factor();
+    while((Token()==='*') || (Token()==='/'))
+    {
+        if(Token()==='*')
+        {
+            validate_token(Token());
+            Factor();
+        }
+        else if(Token()==='/')
+        {
+            validate_token(Token());
+            Factor();
+        }
+        else
+            Error();
+    }
+}
+
+function Factor()
+{
+    if(Token()==='(')
+    {
+        validate_token(Token());
+        Expr();
+        validate_token(')');
+    }
+    else if ((Token() ==='0') || (Token() === '1') || (Token() === '2') || (Token() === '3'))
+    {
+        Digit();
+    }
+    else
+        Error();
+}
+
+function Digit()
+{
+    if ((Token() === '0') || (Token() === '1') || (Token() === '2') || (Token() === '3') )
+        validate_token(Token());
+    else
+        Error();
+}
+
+function Token()
+{
+    return(inputString[index1]);
+}
+
+function Inc_pointer()
+{
+    if (index1 < (inputString.length -1))
+        index1++;
+}
+
+function validate_token(x)
+{
+    if (x === Token())
+        Inc_pointer();
+    else
+        Error();
+}
+
+function Error()
+{
+    confirm("Invalid String! :( Error at position: " + (index1 + 1));
+    errorflag = 1;
+    Inc_pointer();
+}
+
+</script>

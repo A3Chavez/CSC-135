@@ -1,0 +1,185 @@
+<html>
+<head>
+	<title>Anthony Chavez Home Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		table, th, td {
+			border: 1px solid black;
+		}
+		table.center {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+
+<body style="background-color:cyan">
+<center><h1>Anthony Chavez's CSC 135 Home Page</h1></center>
+
+<h2>Introduction:</h2>
+<p>My name is Anthony Chavez and I'm a junior majoring in Computer Science. I like to play video games, hang out with friends, and learning programming languages on my own. My main goal is a career in cyber security, somewhere along the lines of a System Analyst or System Administrator. My e-mail is aechavez@csus.edu.</p>
+
+<h2>Programming Knowledge:</h2>
+<ul>
+	<li>Java</li>
+	<li>C</li>
+	<li>Verilog</li>
+	<li>VHDL</li>
+</ul>
+
+<h2>Programming Interests:</h2>
+<ul>
+	<li>SQL</li>
+	<li>Python</li>
+</ul>
+
+<h2>Favorite Picture:</h2>
+<p>This is my dog Rudy, he's about 13 years old and is a Rat Terrier Chihuahua. This is a picture of him helping with laundry day.</p>
+<center>
+	<img src="Rudy.jpg" alt="My Dog Rudy">
+</center>
+
+<br>
+
+<h2>PL Assignment 1:</h2>
+	<li>Syntax: The ways symbols may be combined to create well-formed sentences (or programs) in the language.</li>
+	<li>Semantics: Reveals the meaning of syntactically valid strings in a language.</li>
+	<li>Lexical Scanning: Reading a sequence characters and producing a list of tokens.</li>
+	<li>Parsing and Parser: Explaining a sentence through its grammatical derivation that is familiar to most of us from a study of natural languages. Parser is the entity that implements how the parsing is executed.</li>
+</ul>
+
+<br>
+
+<p>References: </p>
+<ul>
+	<li>Peter Linz, An Introduction to Formal Languages and Automata, 5th Edition</li>
+	<li>Kenneth Slonneger, Formal Syntax and Semantics of Programming Languages</li>
+</ul>
+
+<br>
+
+<h2>PL Assignment 3:</h2>
+<table style="width:800px" class="center">
+	<tr>
+		<th>Facts</th>
+		<th>English Meaning of Facts, Rules & Goals</th>
+	</tr>
+	<tr>
+		<td>bakes(john, cupcakes).</td>
+		<td>// John bakes cupcakes</td>
+	</tr>
+	<tr>
+		<td>bakes(bob, bread).</td>
+		<td>// Bob bakes bread</td>
+	</tr>
+	<tr>
+		<td>bakes(sam, cookies).</td>
+		<td>// Sam bakes cookies</td>
+	</tr>
+	<tr>
+		<td>bakes(bob, cupcakes).</td>
+		<td>// Bob bakes cupcakes</td>
+	</tr>
+	<tr>
+		<td>chef(john).</td>
+		<td>// John is a chef</td>
+	</tr>
+	<tr>
+		<td>chef(sam).</td>
+		<td>// Sam is a chef</td>
+	</tr>
+	<tr>
+		<td>baker(bob).</td>
+		<td>// Bob is a baker</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<th>Queries / Goals & Answers</th>
+		<td> </td>
+	</tr>
+	<tr>
+		<td>
+			<p>?- bakes(Who,cupcakes),bakes(Who,bread).</p>
+			<p>Who = bob.</p>
+		</td>
+		<td>
+			<p>// Who bakes both cupcakes and bread?</p>
+			<p>Answer: bob</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p>?- taught(Who,sam).</p>
+			<p>Who = bob</p>
+		</td>
+		<td>
+			<p>// Who taught Sam to bake?</p>
+			<p>Answer: bob</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p>?- taught(bob,sam).</p>
+			<p>true.</p>
+		</td>
+		<td>
+			<p>// Did Bob teach Sam to bake?</p>
+			<p>Answer: true</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p>?- experiments(bob,What).</p>
+			<p>What = bread.</p>
+		</td>
+		<td>
+			<p>// Bob experiments with what?</p>
+			<p>Answer: bread</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p>?- experiments(Who,bread).</p>
+			<p>Who = bob.</p>
+		</td>
+		<td>
+			<p>// Who experiments with bread?</p>
+			<p>Answer: bob</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p>?- experiments(Who,cupcakes).</p>
+			<p>Who = john.</p>
+		</td>
+		<td>
+			<p>// Who experiments with cupcakes?</p>
+			<p>Answer: john</p>
+		</td>
+	</tr>
+</table>
+
+<br>
+
+<h2>Queries In Action:</h2>
+<p>Here we have the queries and their results shown in the picture below.</p>
+<center><img src="prolog_queries.png" alt="Queries"></center>
+
+<br>
+
+<h2>Deduction Tree Solution:</h2>
+<p>Here we have the deduction tree for the query "?- bakes(Who,cupcakes),bakes(Who,bread).".</p>
+<p>In English, Who bakes both cupcakes and bread?</p>
+<center><img src="deduction_tree.jpg" alt="Deduction Tree"></center>
+
+<br>
+
+<h2>PL Assignment 4:</h2>
+<a href="http://athena.ecs.csus.edu/~chavezan/recursive_descent_parser.html">Programming Lab 4</a>
+
+
+</body>
+</html>
